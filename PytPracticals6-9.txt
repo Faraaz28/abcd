@@ -1,449 +1,817 @@
-
-content://com.whatsapp.provider.media/item/400c4de3-6026-4950-b91b-37cb3cb19a19
-
-
-6 FILE HANDLING
-
-6aReading from a file
-print("Moosa Ansari | 210")
-#Here, the file "Hello.txt" is pre-built and stored in the same folder as this program.
-
-# Open the file "Hello.txt" in read mode ('r')
-f = open("Hello.txt", 'r')
-
-# Print the name of the file
-print("File Name: ", f.name)
-
-# Print the mode in which the file is opened
-print("File mode: ", f.mode)
-
-# Check if the file is readable
-print("Is File Readable? ", f.readable())
-
-# Check if the file is currently closed
-print("Is File Closed? ", f.closed)
-
-# Read the contents of the file
-data = f.read()
-
-# Print the contents of the file
-print(data)
-
-# Close the file
-f.close()
-
-# Check again if the file is closed
-print("Is File Closed? : ", f.closed)
-
-
-
-
-6b Writing to a file
-# Program to write data to a file
-
-print("Moosa Ansari | 210")
-# Open a file named "HelloWorld.txt" in write mode ('w')
-# If the file doesn't exist, it will be created
-f = open("HelloWorld.txt", 'w')
-
-# Write three lines of text to the file
-f.write("This is File Handling Program.\n")
-f.write("I am writing data\n")
-f.write("to a file.\n")
-
-# Print a success message to the console
-print("Data written Successfully")
-
-# Close the file to release system resources
-f.close()
-
-
-
-
-7 REGULAR EXPRESSIONS
-
-7aMatch
-print("Moosa Ansari | 210")
-import re
-
-line="Cats are smarter than Dogs"
-
-matchObj=re.match( r'(.*) are (.*?) .*',line,re.M|re.I)
-
-if matchObj:
-    print( "matchObj.group() :", matchObj.group())
-    print("matchObj.group(1) :", matchObj.group(1))
-    print("matchObj.group(2) :", matchObj.group(2))
-else:
-    print("No match!!")
-
-
-
-
-7bSearch
-print("Moosa Ansari | 210")
-import re
-
-#Check if the string starts with "The" and ends with "Spain":
-
-txt = "The rain in Spain"
-x = re.search("^The.*Spain$", txt)
-
-if x:
-  print("YES! We have a match!")
-else:
-  print("No match")
-
-
-
-
-7cSearch and Replace
-print("Moosa Ansari | 210")
-import re
-
-#Replace all white-space characters with the digit "9":
-
-txt = "The rain in Spain"
-x = re.sub("\s", "9", txt)
-print(x)
-
-
-
-
-7dFindAll
-print("Moosa Ansari | 210")
-import re
-
-#Return a list containing every occurrence of "ai":
-
-txt = "The rain in Spain"
-x = re.findall("ai", txt)
-print(x)
-
-
-
-
-7eSplit
-print("Moosa Ansari | 210")
-import re
-
-#Split the string at every white-space character:
-
-txt = "The rain in Spain"
-x = re.split("\s", txt)
-print(x)
-
-
-
-
-
-8A CLASSES AND OBJECTS
-
-8A1print("Moosa Ansari | 210")
-class Employee:
-    'commom base class for all employees'
-    empCount=0
-
-    def __init__(self,name,salary):
-        self.name = name
-        self.salary = salary
-        Employee.empCount += 1
-
-    def displayCount(self):
-                     print ("Total Employee ",Employee.empCount)
-
-    def displayEmployee(self):
-        print("Name : ", self.name,"Salary:",self.salary)
-
-emp1=Employee("Zara",2000)
-emp2=Employee("Manni",5000)
-emp1.displayEmployee()
-emp2.displayEmployee()
-print ("Total Employee", Employee.empCount)
-
-
-
-
-8A2Built-in Functions
-print("Moosa Ansari | 210")
-class Point:
-    def __init__(self,x=0,y=0):
-        self.x=x
-        self.y=y
-    def __del__(self):
-        class_name = self.__class__.__name__
-        print (class_name,"destroyed")
-
-pt1=Point()
-pt2=pt1
-pt3=pt1
-print (id(pt1),id(pt2),id(pt3))
-del pt1
-del pt2
-del pt3
-
-
-
-
-8A3MethodOverloading
-print("Moosa Ansari | 210")
-class Vector:
-  def __init__(self, a, b):
-     self.a = a
-     self.b = b
-
-  def __str__(self):
-     return 'Vector (%d, %d)' % (self.a, self.b)
+Java Practicals
+
+1
+A Arithmetic Operators 
+public class ArithmeticOperators {
+    public static void main(String[] args) {
+        int a = 10, b = 5;
+        
+        System.out.println("Addition: " + (a + b));
+        System.out.println("Subtraction: " + (a - b));
+        System.out.println("Multiplication: " + (a * b));
+        System.out.println("Division: " + (a / b));
+        System.out.println("Modulus: " + (a % b));
+    }
+}
+
+B If else
+public class IfElseExample {
+    public static void main(String[] args) {
+        int a = 10, b = 20;
+        
+        if (a > b) {
+            System.out.println("a is greater than b");
+        } else {
+            System.out.println("a is not greater than b");
+        }
+    }
+}
+
+C Nested
+public class NestedIfElse {
+    public static void main(String[] args) {
+        int a = 15, b = 10;
+
+        if (a > b) {
+            if (a == 15) {
+                System.out.println("a is 15 and greater than b");
+            } else {
+                System.out.println("a is greater than b but not 15");
+            }
+        } else {
+            System.out.println("a is not greater than b");
+        }
+    }
+}
+
+D ladder
+public class LadderIf {
+    public static void main(String[] args) {
+        int a = 20;
+
+        if (a == 10) {
+            System.out.println("a is 10");
+        } else if (a == 15) {
+            System.out.println("a is 15");
+        } else if (a == 20) {
+            System.out.println("a is 20");
+        } else {
+            System.out.println("a is not 10, 15, or 20");
+        }
+    }
+}
+
+E switch case
+public class SwitchCase {
+    public static void main(String[] args) {
+        int a = 2;
+
+        switch (a) {
+            case 1:
+                System.out.println("a is 1");
+                break;
+            case 2:
+                System.out.println("a is 2");
+                break;
+            case 3:
+                System.out.println("a is 3");
+                break;
+            default:
+                System.out.println("a is not 1, 2, or 3");
+        }
+    }
+}
+
+F1 for loop
+public class ForLoopExample {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Iteration " + i);
+        }
+    }
+}
+
+
+F2 While loop
+public class WhileLoopExample {
+    public static void main(String[] args) {
+        int i = 1;
+
+        while (i <= 5) {
+            System.out.println("Iteration " + i);
+            i++;
+        }
+    }
+}
+
+F3 Do While Loop 
+public class DoWhileLoopExample {
+    public static void main(String[] args) {
+        int i = 1;
+
+        do {
+            System.out.println("Iteration " + i);
+            i++;
+        } while (i <= 5);
+    }
+}
+
+G Continue And Break
+public class ContinueAndBreak {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 5; i++) {
+            if (i == 3) {
+                continue; // Skip iteration when i is 3
+            }
+
+            if (i == 4) {
+                break; // Exit the loop when i is 4
+            }
+
+            System.out.println("Iteration " + i);
+        }
+    }
+}
+
+
+2 Classes and Objects
+A Initialization Through Reference Variable
+class Car {
+    String model;
+    int year;
+
+    // Method to display car details
+    void display() {
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+    }
+}
+
+public class InitializationThroughReferenceVariable {
+    public static void main(String[] args) {
+        // Creating an object of Car class
+        Car car = new Car();
+        
+        // Initializing object attributes through reference variable
+        car.model = "Toyota Corolla";
+        car.year = 2020;
+
+        // Display car details
+        car.display();
+    }
+}
+
+B Initialization Through Method
+class Car {
+    String model;
+    int year;
+
+    // Method to initialize attributes
+    void initialize(String m, int y) {
+        model = m;
+        year = y;
+    }
+
+    // Method to display car details
+    void display() {
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+    }
+}
+
+public class InitializationThroughMethod {
+    public static void main(String[] args) {
+        // Creating an object of Car class
+        Car car = new Car();
+
+        // Initializing object attributes through method
+        car.initialize("Honda Civic", 2022);
+
+        // Display car details
+        car.display();
+    }
+}
  
-  def __add__(self,other):
-     return Vector(self.a + other.a, self.b + other.b)
-
-v1 = Vector(2,10)
-v2 = Vector(5,-2)
-print (v1 + v2)
-
-
-
-
-8A4Inheritance and Method Overriding
-print("Moosa Ansari | 210")
-class Parent: # define parent class
-   def myMethod(self):
-      print("Calling parent method")
-
-class Child(Parent): # define child class
-   def myMethod(self):
-      print("Calling child method")
-
-c = Child() # instance of child
-c.myMethod() # child calls overridden method
-
-
-
-
-
-8B MODULES
-
-8B1Calendar Mod
-print("Moosa Ansari | 210")
-# Import the 'calendar' module
-import calendar
-
-# Prompt the user to input the year and month
-y = int(input("Input the year : "))
-m = int(input("Input the month : "))
-
-# Print the calendar for the specified year and month
-print(calendar.month(y, m))
-
-
-
-
-8B2Struct Mod
-print("Moosa Ansari | 210")
-# Import the 'struct' module, which provides pack and unpack functions for working with variable-length binary data.
-import struct
-
-# Use the 'calcsize' function to determine the size (in bytes) of the C int type for the current platform.
-# The format string "P" is used to represent the C void pointer type, and multiplying it by 8 gives the size in bits.
-# The result will be 32 for 32-bit platforms and 64 for 64-bit platforms.
-print(struct.calcsize("P") * 8)
-
-
-
-
-8B3 The "From...import..." statement
-IN THIS PRACT, ADD PATH OF ANY DIRECTORY FROM YOUR PC (THAT DIRECTORY MUST CONTAIN FILES) INSIDE THE (' ') BRACKET
-EXMPL: C:/Users/DELL/OneDrive/Desktop/Module Practicals/
-
-print("Moosa Ansari | 210")
-# Import necessary functions and modules from the 'os' library.
-from os import listdir
-from os.path import isfile, join
-
-# Create a list 'files_list' that contains the names of files in the 'PATH' directory.
-# It uses a list comprehension to filter files using 'isfile' and 'join' functions.
-files_list = [f for f in listdir('PATH') if isfile(join('PATH', f))]
-
-# Print the list of file names.
-print(files_list)
-
-
-
-
-9 GUI PROGRAMS
-
-9aPythonCanvas
-print("Moosa Ansari | 210 \nPython Canvas")
-from tkinter import *
-top = Tk()
-top.geometry("200x200")
-#creating a simple canvas
-c = Canvas(top,bg = "pink",height = "200")
-c.pack()
-top.mainloop()
-
-
-
-
-9bCreatingAnArc
-print("Moosa Ansari | 210 \nCreating an Arc")
-from tkinter import *
-top = Tk()
-top.geometry("200x200")
-#creating a simple canvas
-c = Canvas(top,bg = "pink",height = "200",width = 200)
-arc = c.create_arc((5,10,150,200),start = 0,extent = 150, fill= "white")
-c.pack()
-top.mainloop()
-
-
-
-
-9cCheckbox
-print("Moosa Ansari | 210\nCheckBox")
-from tkinter import *
-top = Tk()
-top.geometry("200x200")
-checkvar1 = IntVar()
-checkvar2 = IntVar()
-checkvar3 = IntVar()
-chkbtn1 = Checkbutton(top, text = "C", variable = checkvar1, onvalue = 1, offvalue = 0, height = 2, width = 10)
-chkbtn2 = Checkbutton(top, text = "C+", variable = checkvar2, onvalue = 1, offvalue = 0, height = 2, width = 10)
-chkbtn3 = Checkbutton(top, text = "Java", variable = checkvar3, onvalue = 1, offvalue = 0, height = 2, width = 10)
-chkbtn1.pack()
-chkbtn2.pack()
-chkbtn3.pack()
-top.mainloop()
-
-
-
-
-
-9dEntry
-print("Moosa Ansari | 210 \nEntry (Calculator)")
-import tkinter as tk
-from functools import partial
-
-def call_result(label_result, n1, n2):
-    num1 = n1.get()
-    num2 = n2.get()
-    result = int(num1) + int(num2)
-    label_result.config(text="Result = %d" % result)
-    return
-
-root = tk.Tk()
-root.geometry('400x200+100+200')
-root.title('Calculator')
-
-number1 = tk.StringVar()
-number2 = tk.StringVar()
-
-labelNum1 = tk.Label(root, text="A").grid(row=1, column=0)
-labelNum2 = tk.Label(root, text="B").grid(row=2, column=0)
-labelResult = tk.Label(root)
-labelResult.grid(row=7, column=2)
-
-entryNum1 = tk.Entry(root, textvariable=number1).grid(row=1, column=2)
-entryNum2 = tk.Entry(root, textvariable=number2).grid(row=2, column=2)
-
-call_result = partial(call_result, labelResult, number1, number2)
-buttonCal = tk.Button(root, text="Calculate", command=call_result).grid(row=3, column=0)
-
-root.mainloop()
-
-
-
-
-9eListbox
-print("Moosa Ansari | 210 \nListBox")
-from tkinter import *
-
-top = Tk()
-top.geometry("200x250")
-
-lbl = Label(top, text="A list of favourite countries...")
-listbox = Listbox(top)
-listbox.insert(1, "India")
-listbox.insert(2, "USA")
-listbox.insert(3, "Japan")
-listbox.insert(4, "Australia")
-
-# This button will delete the selected item from the list
-btn = Button(top, text="Delete", command=lambda: listbox.delete(ANCHOR))
-
-lbl.pack()
-listbox.pack()
-btn.pack()
-
-top.mainloop()
-
-
-
-
-9fMenuButton
-print("Moosa Ansari | 210 \nMenuButton")
-from tkinter import *
-
-top = Tk()
-top.geometry("200x250")
-
-menubutton = Menubutton(top, text="Language", relief=FLAT)
-menubutton.grid()
-
-menubutton.menu = Menu(menubutton, tearoff=0)
-menubutton["menu"] = menubutton.menu
-
-# Add checkbuttons to the menu
-menubutton.menu.add_checkbutton(label="Hindi", variable=IntVar())
-menubutton.menu.add_checkbutton(label="English", variable=IntVar())
-
-# Use grid or pack, but not both
-menubutton.grid()
-
-top.mainloop()
-
-
-
-
-9gMenuBar
-print("Moosa Ansari | 210 \nMenuBar")
-from tkinter import Toplevel, Button, Tk, Menu
-
-top = Tk()
-
-menubar = Menu(top)
-
-file = Menu(menubar, tearoff=0)
-file.add_command(label="New")
-file.add_command(label="Open")
-file.add_command(label="Save")
-file.add_command(label="Save as...")
-file.add_command(label="Close")
-file.add_separator()
-file.add_command(label="Exit", command=top.quit)
-menubar.add_cascade(label="File", menu=file)
-
-edit = Menu(menubar, tearoff=0)
-edit.add_command(label="Undo")
-edit.add_separator()
-edit.add_command(label="Cut")
-edit.add_command(label="Copy")
-edit.add_command(label="Paste")
-edit.add_command(label="Delete")
-edit.add_command(label="Select All")
-menubar.add_cascade(label="Edit", menu=edit)
-
-help = Menu(menubar, tearoff=0)
-help.add_command(label="About")
-menubar.add_cascade(label="Help", menu=help)
-
-top.config(menu=menubar)
-
-top.mainloop()
-
-
-
-
-
-
+C Initialization Through Constructor
+class Car {
+    String model;
+    int year;
+
+    // Constructor to initialize the object
+    Car(String m, int y) {
+        model = m;
+        year = y;
+    }
+
+    // Method to display car details
+    void display() {
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+    }
+}
+
+public class InitializationThroughConstructor {
+    public static void main(String[] args) {
+        // Creating an object of Car class and initializing through constructor
+        Car car = new Car("Tesla Model 3", 2023);
+
+        // Display car details
+        car.display();
+    }
+}
+
+D (topic nai malum)
+
+3 Constructor
+Default Constructor
+class Car {
+    String model;
+    int year;
+
+    // Default constructor
+    Car() {
+        model = "Unknown";
+        year = 0;
+    }
+
+    void display() {
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+    }
+}
+
+public class DefaultConstructorExample {
+    public static void main(String[] args) {
+        // Creating an object with the default constructor
+        Car car = new Car();
+        
+        // Displaying car details
+        car.display();
+    }
+}
+ 
+Parameterized Const
+class Car {
+    String model;
+    int year;
+
+    // Parameterized constructor
+    Car(String m, int y) {
+        model = m;
+        year = y;
+    }
+
+    void display() {
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+    }
+}
+
+public class ParameterizedConstructorExample {
+    public static void main(String[] args) {
+        // Creating an object with the parameterized constructor
+        Car car = new Car("BMW X5", 2022);
+        
+        // Displaying car details
+        car.display();
+    }
+}
+
+Const overloading
+class Car {
+    String model;
+    int year;
+
+    // Constructor with no parameters
+    Car() {
+        model = "Unknown";
+        year = 0;
+    }
+
+    // Constructor with parameters
+    Car(String m, int y) {
+        model = m;
+        year = y;
+    }
+
+    void display() {
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+    }
+}
+
+public class ConstructorOverloadingExample {
+    public static void main(String[] args) {
+        // Creating an object with the default constructor
+        Car car1 = new Car();
+        car1.display();
+
+        // Creating an object with the parameterized constructor
+        Car car2 = new Car("Audi A6", 2021);
+        car2.display();
+    }
+}
+
+Constructor chaining
+class Vehicle {
+    String type;
+
+    // Constructor of Vehicle class
+    Vehicle(String t) {
+        type = t;
+    }
+
+    void display() {
+        System.out.println("Vehicle Type: " + type);
+    }
+}
+
+class Car extends Vehicle {
+    String model;
+    int year;
+
+    // Constructor chaining to call superclass constructor
+    Car(String m, int y, String t) {
+        super(t);  // Calling the Vehicle class constructor
+        model = m;
+        year = y;
+    }
+
+    void display() {
+        super.display();  // Calling display method of superclass
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+    }
+}
+
+public class ConstructorChainingExample {
+    public static void main(String[] args) {
+        // Creating an object with constructor chaining
+        Car car = new Car("Tesla Model S", 2023, "Electric");
+        
+        // Displaying car details
+        car.display();
+    }
+}
+
+
+4 Inheritance
+Single
+// Parent class (superclass)
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+// Child class (subclass)
+class Dog extends Animal {
+    void bark() {
+        System.out.println("The dog barks.");
+    }
+}
+
+public class SingleInheritanceExample {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();  // Inherited from Animal class
+        dog.bark(); // Specific to Dog class
+    }
+}
+
+Multilevel
+// Grandparent class
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+// Parent class inherits from Animal
+class Mammal extends Animal {
+    void giveBirth() {
+        System.out.println("Mammals give birth.");
+    }
+}
+
+// Child class inherits from Mammal
+class Dog extends Mammal {
+    void bark() {
+        System.out.println("The dog barks.");
+    }
+}
+
+public class MultilevelInheritanceExample {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();        // Inherited from Animal class
+        dog.giveBirth();  // Inherited from Mammal class
+        dog.bark();       // Specific to Dog class
+    }
+}
+
+Hierarchical 
+// Parent class (superclass)
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+// Child class 1 (subclass)
+class Dog extends Animal {
+    void bark() {
+        System.out.println("The dog barks.");
+    }
+}
+
+// Child class 2 (subclass)
+class Cat extends Animal {
+    void meow() {
+        System.out.println("The cat meows.");
+    }
+}
+
+public class HierarchicalInheritanceExample {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();   // Inherited from Animal class
+        dog.bark();  // Specific to Dog class
+
+        Cat cat = new Cat();
+        cat.eat();   // Inherited from Animal class
+        cat.meow();  // Specific to Cat class
+    }
+}
+
+Hybrid
+// Grandparent class
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+// Parent class 1
+class Mammal extends Animal {
+    void giveBirth() {
+        System.out.println("Mammals give birth.");
+    }
+}
+
+// Parent class 2
+class Reptile extends Animal {
+    void layEggs() {
+        System.out.println("Reptiles lay eggs.");
+    }
+}
+
+// Child class inherits from both Mammal and Reptile (Hybrid example)
+class Lizard extends Reptile {
+    void crawl() {
+        System.out.println("The lizard crawls.");
+    }
+}
+
+public class HybridInheritanceExample {
+    public static void main(String[] args) {
+        Lizard lizard = new Lizard();
+        lizard.eat();     // Inherited from Animal
+        lizard.layEggs(); // Inherited from Reptile
+        lizard.crawl();   // Specific to Lizard
+    }
+}
+
+
+5 Polymorphism
+class Animal {
+    public void sound() {
+        System.out.println("This is an animal sound.");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    public void sound() {
+        System.out.println("Dog barks.");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    public void sound() {
+        System.out.println("Cat meows.");
+    }
+}
+
+public class PolymorphismExample {
+    public static void main(String[] args) {
+        Animal a1 = new Dog(); // Dog instance, but referred to by Animal reference
+        Animal a2 = new Cat(); // Cat instance, but referred to by Animal reference
+
+        a1.sound(); // Output: Dog barks.
+        a2.sound(); // Output: Cat meows.
+    }
+}
+
+Method Overloading
+class Calculator {
+    // Overloaded method with two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Overloaded method with three integers
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Overloaded method with two double parameters
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class MethodOverloadingExample {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println("Sum of two integers: " + calc.add(10, 20)); // Output: 30
+        System.out.println("Sum of three integers: " + calc.add(10, 20, 30)); // Output: 60
+        System.out.println("Sum of two doubles: " + calc.add(10.5, 20.5)); // Output: 31.0
+    }
+}
+
+Method Overriding 
+class Parent {
+    public void show() {
+        System.out.println("Parent's show method.");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    public void show() {
+        System.out.println("Child's show method.");
+    }
+}
+
+public class MethodOverridingExample {
+    public static void main(String[] args) {
+        Parent p = new Parent();
+        Child c = new Child();
+        Parent pc = new Child();
+
+        p.show();   // Output: Parent's show method.
+        c.show();   // Output: Child's show method.
+        pc.show();  // Output: Child's show method.
+    }
+}
+
+
+
+Constructor overloading
+class Student {
+    String name;
+    int age;
+    String course;
+
+    // Constructor with no parameters
+    public Student() {
+        this.name = "Unknown";
+        this.age = 0;
+        this.course = "Unknown";
+    }
+
+    // Constructor with one parameter
+    public Student(String name) {
+        this.name = name;
+        this.age = 0;
+        this.course = "Unknown";
+    }
+
+    // Constructor with two parameters
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+        this.course = "Unknown";
+    }
+
+    // Constructor with three parameters
+    public Student(String name, int age, String course) {
+        this.name = name;
+        this.age = age;
+        this.course = course;
+    }
+
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age + ", Course: " + course);
+    }
+}
+
+public class ConstructorOverloadingExample {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        Student s2 = new Student("John");
+        Student s3 = new Student("John", 20);
+        Student s4 = new Student("John", 20, "Computer Science");
+
+        s1.displayInfo(); // Output: Name: Unknown, Age: 0, Course: Unknown
+        s2.displayInfo(); // Output: Name: John, Age: 0, Course: Unknown
+        s3.displayInfo(); // Output: Name: John, Age: 20, Course: Unknown
+        s4.displayInfo(); // Output: Name: John, Age: 20, Course: Computer Science
+    }
+}
+ 
+
+6 Interface
+6.1 Simple Interface
+PROJECT NAME: SimpleInterface
+interface printable{    
+void print();    
+}    
+class SimpleInterface implements printable{    
+public void print(){System.out.println("Hello");}    
+public static void main(String args[]){    
+SimpleInterface obj = new SimpleInterface();    
+obj.print();   
+System.out.println("Moosa Imran 210");
+ }    
+}
+
+6.2 Class Implementing Multiple Interface
+PROJ NAME: MultipleInterface
+interface Drawable{  
+void draw();  
+}  
+//Implementation: by second user  
+class Rectangle implements Drawable{  
+public void draw(){System.out.println("drawing rectangle");}  
+}  
+class Circle implements Drawable{  
+public void draw(){System.out.println("drawing circle");}  
+}  
+//Using interface: by third user  
+class MultipleInterface{  
+public static void main(String args[]){  
+Drawable d=new Circle();//In real scenario, object is provided by method e.g. getDrawable()  
+d.draw();  
+System.out.println("Moosa Imran 210");
+}}  
+
+6.3 Multiple Inheritance In Java
+PROJ NAME: MultipleInheritance
+interface Printable{  
+void print();  
+}  
+interface Showable{  
+void show();  
+}  
+class MultipleInheritance implements Printable,Showable{  
+public void print(){System.out.println("Hello");}  
+public void show(){System.out.println("Welcome");}  
+  
+public static void main(String args[]){  
+MultipleInheritance obj = new MultipleInheritance();  
+obj.print();  
+obj.show();
+System.out.println("Moosa Imran 210");
+ }  
+}  
+
+
+6.4 Interface Inheritance
+PROJ NAM: InterfaceInheritance
+interface Printable{  
+void print();  
+}  
+interface Showable extends Printable{  
+void show();  
+}  
+class InterfaceInheritance implements Showable{  
+public void print(){System.out.println("Hello");}  
+public void show(){System.out.println("Welcome");}  
+  
+public static void main(String args[]){  
+InterfaceInheritance obj = new InterfaceInheritance();  
+obj.print();  
+obj.show();  
+System.out.println("Moosa Imran 210");
+ }  
+}  
+
+6.5 Default Method In an interface 
+PROJ NAME: DefaultInterfaceMethod
+interface Drawable{  
+void draw();  
+default void msg(){System.out.println("default method");}  
+}  
+class Rectangle implements Drawable{  
+public void draw(){System.out.println("drawing rectangle");}  
+}  
+class DefaultInterfaceMethod {  
+public static void main(String args[]){  
+Drawable d=new Rectangle();  
+d.draw();  
+d.msg();
+System.out.println("Moosa Imran 210");
+}}  
+
+   
+1.Arithmetic Exception
+PROJ NAME: ArithmeticExcpt
+public class ArithmeticExcpt {  
+    public static void main(String[] args) {  
+        int dividend = 10;  
+        int divisor = 0;  
+        try {  
+            int result = dividend / divisor; // Division by zero  
+            System.out.println("Result: " + result);  
+        } catch (ArithmeticException e) {  
+            System.out.println("Error: Division by zero is not allowed.");  
+            // Additional error handling code can be added here  
+            System.out.println("Moosa Imran 210");
+        }  
+    }  
+}
+
+
+2. Array Index Out Of Bounds Exception
+PROJ NAME: IndexOutOfBoundsExcp
+public class IndexOutOfBoundsExcp {  
+    public static void main(String[] args) {  
+        int[] numbers = {1, 2, 3, 4, 5}; // Initializing an array with 5 elements  
+        try {  
+            int index = 10; // Accessing an index that is out of bounds  
+            int value = numbers[index]; // Attempting to access an element at an invalid index  
+            System.out.println("Value at index " + index + ": " + value);  
+        } catch (ArrayIndexOutOfBoundsException e) {  
+            System.out.println("Error: Index is out of bounds.");  
+            // Additional error handling code can be added here  
+            System.out.println("Moosa Imran 210");
+        }  
+    }  
+}
+
+
+3. Multiple Catch Block/Null Pointer Exception
+PROJ NAME: MultipleCatch
+public class MultipleCatch{    
+    public static void main(String[] args) {            
+           try{    
+               String str = null;
+               System.out.println(str.length());
+               
+                int a[]=new int[5];    
+                a[5]=30/0;    
+               }    
+               catch(ArithmeticException e)  
+                  {  
+                   System.out.println("Arithmetic Exception occured");  
+                  }    
+               catch(NullPointerException e)  
+                  {  
+                   System.out.println("Null Pointer Exception occured");  
+                  }    
+               catch(Exception e)  
+                  {  
+                   System.out.println("Parent Exception occured");  
+                  }             
+               System.out.println("rest of the code");
+               System.out.println("Moosa Imran 210");
+    }  
+}    
+
+4. Throw Keyword
+PROJ NAME:ThrowKeyword
+public class ThrowKeyword {   
+    //function to check if person is eligible to vote or not   
+    public static void validate(int age) {  
+        System.out.println("Moosa Imran 210");
+        if(age<18) {  
+            //throw Arithmetic exception if not eligible to vote  
+            throw new ArithmeticException("Person is not eligible to vote");    
+        }  
+        else {  
+            System.out.println("Person is eligible to vote!!");  
+        }  
+    }  
+    //main method  
+    public static void main(String args[]){  
+        //calling the function  
+        validate(13);  
+        System.out.println("rest of the code...");    
+  }    
+}    
+
+
+5. Finally Block
+PROJ NAME: FinallyBlock
+class FinallyBlock {    
+  public static void main(String args[]){    
+  try{    
+//below code do not throw any exception  
+   int data=25/5;    
+   System.out.println(data);    
+  }    
+//catch won't be executed  
+  catch(Nu
